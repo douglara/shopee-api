@@ -12,17 +12,17 @@ module Shopee
         raise ArgumentError if (params[field.to_sym] == nil or params[field.to_sym].empty?)
       end
 
-      { production: false }.merge(params)
-      @partner_id = params[:partner_id]
+      params = { production: false }.merge(params)
+      @partner_id = params[:partner_id].to_i
       @partner_key = params[:partner_key]
       @redirect_uri = params[:redirect_uri]
-      @shopid = params[:shopid]
+      @shopid = params[:shopid].to_i
       @production = params[:production]
 
       if @production == false
-        @endpoint_url = "https://partner.uat.shopeemobile.com/api/v2"
+        @endpoint_url = "https://partner.uat.shopeemobile.com"
       else
-        @endpoint_url = "https://partner.shopeemobile.com/api/v2"
+        @endpoint_url = "https://partner.shopeemobile.com"
       end
     end
   end

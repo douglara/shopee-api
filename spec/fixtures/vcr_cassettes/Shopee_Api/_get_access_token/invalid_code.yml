@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://partner.uat.shopeemobile.com/api/v2/auth/token/get?partner_id=<PARTNER_ID>&shop_id=&sign=6103e24d5f213fbf10a59745e5cca3e5e8d6188d23599b38a69d5908d1a250c8&timestamp=1607646333
+    body:
+      encoding: UTF-8
+      string: '{"code":"<AUTH_ACCESS_TOKEN>","shop_id":0,"partner_id":<PARTNER_ID>}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Server:
+      - SGW
+      Date:
+      - Fri, 11 Dec 2020 00:25:35 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Sgwreq-Id:
+      - a1b50f1693b458f3b5ca94bb6e85d975
+      Vary:
+      - Accept-Encoding
+      Req-Id:
+      - a1b50f1693b458f3b5ca94bb6e85d975
+      X-Request-Id:
+      - a1b50f1693b458f3b5ca94bb6e85d975
+      X-Frame-Options:
+      - SAMEORIGIN
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invalid code","request_id":"a1b50f1693b458f3b5ca94bb6e85d975","error":"error_auth"}'
+    http_version:
+  recorded_at: Fri, 11 Dec 2020 00:25:35 GMT
+recorded_with: VCR 5.1.0

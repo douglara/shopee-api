@@ -19,17 +19,19 @@ RSpec.describe Shopee::Api do
     end
   end
 
-  describe "#get_access_token" do
+  describe "#get_access_token", :vcr do
     it "success" do
+      expect(subject.get_access_token(ENV['AUTH_CODE'], ENV['SHOPID'])).to include(:ok)
     end
 
     it "invalid code" do
-      expect(subject.get_access_token("123")).to include(:error)
+      expect(subject.get_access_token("123", '')).to include(:error)
     end
   end
 
-  describe "#refresh_token" do
+  describe "#refresh_token", :vcr, :match_requests_on => [:method] do
     it "success" do
+      expect(subject.refresh_token(ENV['AUTH_REFRESH_TOKEN'])).to include(:ok)
     end
 
     it "error" do
