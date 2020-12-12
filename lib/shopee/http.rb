@@ -4,7 +4,6 @@ module Shopee
   module Http
     def post_request(path, body = {})
       body_to_send = prepare_body(body)
-
       response = HTTParty.post("#{@endpoint_url}#{path}",
                                :headers => headers_request(path, body_to_send),
                                :body => body_to_send)
