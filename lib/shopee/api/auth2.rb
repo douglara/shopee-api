@@ -1,7 +1,7 @@
 require "openssl"
 
-module Oauth
-  def build_auth_url()
+module Auth2
+  def auth2_build_auth_url()
     timest = Time.now.getutc.to_i
     path = "/api/v2/shop/auth_partner"
     base_string = "#{@partner_id}#{path}#{timest}"
@@ -10,7 +10,7 @@ module Oauth
     return{ :ok => url }
   end
 
-  def get_access_token(auth_code, shop_id)
+  def auth2_get_access_token(auth_code, shop_id)
     timest = Time.now.getutc.to_i
     body = { "code": auth_code, "shop_id": shop_id.to_i, "partner_id": @partner_id }
     path = '/api/v2/auth/token/get'
@@ -28,7 +28,7 @@ module Oauth
     end
   end
 
-  def refresh_token(refresh_token)
+  def auth2_refresh_token(refresh_token)
     timest = Time.now.getutc.to_i
     body = { "shop_id": @shopid, "refresh_token": refresh_token, "partner_id": @partner_id }
     path = "/api/v2/auth/access_token/get"

@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://partner.uat.shopeemobile.com/api/v1/orders/basics
+    body:
+      encoding: UTF-8
+      string: '{"shopid":null,"partner_id":<PARTNER_ID>,"timestamp":1607753227}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - SGW
+      Date:
+      - Sat, 12 Dec 2020 06:07:08 GMT
+      Content-Type:
+      - text/plain; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Sgwreq-Id:
+      - 75f3aa0d46f8eaee38e07487138a08f8
+      Req-Id:
+      - 75f3aa0d46f8eaee38e07487138a08f8
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Gw-Block:
+      - openapi
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"request_id":"75f3aa0d46f8eaee38e07487138a08f8","msg":"shopid is invalid,
+        should be an integer between 0 and 4294967295","error":"error_param"}'
+    http_version:
+  recorded_at: Sat, 12 Dec 2020 06:07:08 GMT
+recorded_with: VCR 5.1.0
