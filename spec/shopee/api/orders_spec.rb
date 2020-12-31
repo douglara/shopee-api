@@ -3,7 +3,7 @@ RSpec.describe Shopee::Api do
     Shopee::Api.new({
       partner_id: ENV["PARTNER_ID"],
       partner_key: ENV["PARTNER_KEY"],
-      redirect_uri: ENV["REDIRECT_URL"],
+      redirect_uri: ENV["REDIRECT_URI"],
       shopid: ENV["SHOPID"],
       access_token: ENV["AUTH_ACCESS_TOKEN"],
       refresh_token: ENV["AUTH_REFRESH_TOKEN"],
