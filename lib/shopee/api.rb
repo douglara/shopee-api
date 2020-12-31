@@ -1,11 +1,13 @@
 require "shopee/version"
 require "shopee/http"
-require_relative "api/oauth"
+require_relative "api/auth1"
+require_relative "api/orders"
 
 module Shopee
   class Api
     include Shopee::Http
-    include Oauth
+    include Auth1
+    include Orders
 
     def initialize(params)
       [:partner_id, :partner_key, :redirect_uri, :shopid].each do |field|
@@ -17,6 +19,7 @@ module Shopee
       @partner_key = params[:partner_key]
       @redirect_uri = params[:redirect_uri]
       @shopid = params[:shopid].to_i
+      @access_token = params[:access_token]
       @production = params[:production]
 
       if @production == false
