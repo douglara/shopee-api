@@ -2,12 +2,14 @@ require "shopee/version"
 require "shopee/http"
 require_relative "api/auth1"
 require_relative "api/orders"
+require_relative "api/items"
 
 module Shopee
   class Api
     include Shopee::Http
     include Auth1
     include Orders
+    include Items
 
     def initialize(params)
       [:partner_id, :partner_key, :redirect_uri, :shopid].each do |field|

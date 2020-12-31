@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://partner.uat.shopeemobile.com/api/v1/items/get
+    body:
+      encoding: UTF-8
+      string: '{"pagination_offset":0,"pagination_entries_per_page":100,"shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1609377179}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - 85e9d00c1285721509f4296c341a9629e409d1c700ec4d4a027d8a9719cdb16a
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - SGW
+      Date:
+      - Thu, 31 Dec 2020 01:13:01 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '83'
+      Connection:
+      - keep-alive
+      X-Sgwreq-Id:
+      - 1910f89400124563ab310cabeceef404
+      X-Request-Id:
+      - 1910f89400124563ab310cabeceef404
+      Access-Control-Expose-Headers:
+      - Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers,
+        Content-Type
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Host:
+      - partner.shopeemobile.com
+      Req-Id:
+      - 1910f89400124563ab310cabeceef404
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Content-Type,AccessToken,X-CSRF-Token, Authorization, Token
+    body:
+      encoding: UTF-8
+      string: '{"items":[],"request_id":"1910f89400124563ab310cabeceef404","more":false,"total":0}'
+    http_version: null
+  recorded_at: Thu, 31 Dec 2020 01:13:01 GMT
+recorded_with: VCR 5.1.0
