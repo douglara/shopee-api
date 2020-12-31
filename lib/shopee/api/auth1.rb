@@ -10,7 +10,7 @@ module Auth1
     return { ok: url }
   end
 
-  def self.generate_authorization(endpoint_url, path, data, partner_key)
+  def self.generate_authorization(path, data, endpoint_url, partner_key)
     message = "#{endpoint_url}#{path}|#{data}"
     {ok: OpenSSL::HMAC.hexdigest("SHA256", partner_key, message) }
   end
