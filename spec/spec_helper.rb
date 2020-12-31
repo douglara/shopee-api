@@ -17,7 +17,7 @@ VCR.configure do |config|
 
   config.filter_sensitive_data('<PARTNER_ID>') { ENV['PARTNER_ID'] }
   config.filter_sensitive_data('<PARTNER_KEY>') { ENV['PARTNER_ID'] }
-  config.filter_sensitive_data('<REDIRECT_URL>') { ENV['REDIRECT_URL'] }
+  config.filter_sensitive_data('<REDIRECT_URI>') { ENV['REDIRECT_URI'] }
   config.filter_sensitive_data('<SHOPID>') { ENV['SHOPID'] }
   config.filter_sensitive_data('<AUTH_CODE>') { ENV['AUTH_CODE'] }
   config.filter_sensitive_data('<AUTH_ACCESS_TOKEN>') { ENV['AUTH_ACCESS_TOKEN'] }
