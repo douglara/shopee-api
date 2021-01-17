@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://partner.uat.shopeemobile.com/api/v1/orders/get
+    uri: https://partner.uat.shopeemobile.com/api/v1/orders/detail
     body:
       encoding: UTF-8
-      string: '{"order_status":"ALL","shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1610844785}'
+      string: '{"ordersn_list":["11111111111111"],"shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1610846124}'
     headers:
       Content-Type:
       - application/json
       Authorization:
-      - a76b7ed957628bc804251f94e5db96eecce7b112f558bb31163b7c8e3aa645df
+      - 1422d8ceab46ba0edaf2953eebab320ba3fa7f3c03b98946811a98f62608483d
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - SGW
       Date:
-      - Sun, 17 Jan 2021 00:53:06 GMT
+      - Sun, 17 Jan 2021 01:15:24 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -38,24 +38,23 @@ http_interactions:
       - Accept-Encoding
       - Accept-Encoding
       X-Sgwreq-Id:
-      - 14e1ca6706d6dc8cc42684baec993a0b
+      - 86935a1b37d77b35dc876a5c13d1f316
       Cache-Control:
       - no-cache, no-store, must-revalidate
       Pragma:
       - no-cache
       Set-Cookie:
-      - SC_DFP=Z3o89ijr98wl7Iyc048gO73nSbCrlRup; expires=Wed, 15-Jan-2031 00:53:05
+      - SC_DFP=PZuWdKMaZBrV5E1c7AumF5NjsIF6P1n9; expires=Wed, 15-Jan-2031 01:15:24
         GMT; httponly; Max-Age=315360000; Path=/
       Req-Id:
-      - 14e1ca6706d6dc8cc42684baec993a0b
+      - 86935a1b37d77b35dc876a5c13d1f316
       Expires:
       - '0'
       X-Request-Id:
-      - 14e1ca6706d6dc8cc42684baec993a0b
+      - 86935a1b37d77b35dc876a5c13d1f316
     body:
       encoding: ASCII-8BIT
-      string: '{"request_id": "14e1ca6706d6dc8cc42684baec993a0b", "orders": [{"ordersn":
-        "123", "order_status": "READY_TO_SHIP", "update_time": 1610837344}], "more": false}'
+      string: '{"errors": ["11111111111111"], "orders": [], "request_id": "86935a1b37d77b35dc876a5c13d1f316"}'
     http_version:
-  recorded_at: Sun, 17 Jan 2021 00:53:06 GMT
+  recorded_at: Sun, 17 Jan 2021 01:15:24 GMT
 recorded_with: VCR 5.1.0

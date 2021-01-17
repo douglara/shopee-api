@@ -1,30 +1,26 @@
 RSpec.describe Shopee::Api do
   let(:subject) {
     Shopee::Api.new({
-      partner_id: ENV["PARTNER_ID"],
-      partner_key: ENV["PARTNER_KEY"],
-      redirect_uri: ENV["REDIRECT_URI"],
-      shopid: ENV["SHOPID"],
-      access_token: ENV["AUTH_ACCESS_TOKEN"],
-      refresh_token: ENV["AUTH_REFRESH_TOKEN"],
+      partner_id: ENV['PARTNER_ID'],
+      partner_key: ENV['PARTNER_KEY'],
+      redirect_uri: ENV['REDIRECT_URI'],
+      shopid: ENV['SHOPID']
     })
   }
 
-  describe "#get_order" do
-    it "success" do
+  describe '#get_order', :vcr do
+    it 'valid' do
+      expect(subject.get_order('123')).to include(:ok)
     end
 
-    it "error" do
+    it 'invalid' do
+      expect(subject.get_order('11111111111111')).to include(:ok)
     end
   end
 
-  describe "#get_orders", :vcr do
-    it "success" do
-      #puts(subject.get_access_token(ENV['AUTH_CODE'], ENV['SHOPID']).inspect)
+  describe '#get_orders', :vcr do
+    it 'success' do
       expect(subject.get_orders).to include(:ok)
-    end
-
-    it "error" do
     end
   end
 end
