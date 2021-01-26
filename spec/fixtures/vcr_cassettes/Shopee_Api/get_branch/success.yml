@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://partner.shopeemobile.com/api/v1/orders/get
+    uri: https://partner.shopeemobile.com/api/v1/logistics/branch/get
     body:
       encoding: UTF-8
-      string: '{"order_status":"ALL","shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1611230704}'
+      string: '{"ordersn":"123","shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1611231179}'
     headers:
       Content-Type:
       - application/json
       Authorization:
-      - f3c1eab3ec2cecf49005caaca9883d83058460644d6f54a973ec69e0daf55262
+      - 36b37661c61d9f012288f01d48e6cde1915dc223844b0581c671e746c552636d
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - SGW
       Date:
-      - Thu, 21 Jan 2021 12:05:04 GMT
+      - Thu, 21 Jan 2021 12:12:59 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -44,7 +44,7 @@ http_interactions:
       Pragma:
       - no-cache
       Set-Cookie:
-      - SC_DFP=BuqCLoqIkTUeJN4sVvu0gFdxJlagDyG5; expires=Sun, 19-Jan-2031 12:05:04
+      - SC_DFP=ESza0mBlC3BJic7NkZRPknDPRpx3YPEA; expires=Sun, 19-Jan-2031 12:12:59
         GMT; httponly; Max-Age=315360000; Path=/
       Req-Id:
       - request_id
@@ -54,9 +54,8 @@ http_interactions:
       - request_id
     body:
       encoding: ASCII-8BIT
-      string: '{"request_id": "request_id", "orders": [{"ordersn":
-        "123", "order_status": "UNPAID", "update_time": 1611189726}, {"ordersn":
-        "1234", "order_status": "READY_TO_SHIP", "update_time": 1611189410}], "more": true}'
+      string: '{"msg": "This order not support dropoff branch", "request_id": "request_id",
+        "error": "error_not_support"}'
     http_version:
-  recorded_at: Thu, 21 Jan 2021 12:05:05 GMT
+  recorded_at: Thu, 21 Jan 2021 12:12:59 GMT
 recorded_with: VCR 5.1.0

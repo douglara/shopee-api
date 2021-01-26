@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://partner.uat.shopeemobile.com/api/v1/orders/detail
+    uri: https://partner.shopeemobile.com/api/v1/orders/detail
     body:
       encoding: UTF-8
-      string: '{"ordersn_list":["123"],"shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1610845624}'
+      string: '{"ordersn_list":["1234"],"shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1611230805}'
     headers:
       Content-Type:
       - application/json
       Authorization:
-      - 5c26a68b21ab169f57eea6b183cb684ccd438e3d252a1c719047c558ddba82df
+      - e6989b230291ceb91c69347f3695b8bfc2c0940b44290e41811439aa35c879a4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - SGW
       Date:
-      - Sun, 17 Jan 2021 01:07:04 GMT
+      - Thu, 21 Jan 2021 12:06:46 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -38,42 +38,47 @@ http_interactions:
       - Accept-Encoding
       - Accept-Encoding
       X-Sgwreq-Id:
-      - 5885985c71b3af7d1b6d0231992066be
+      - request_id
       Cache-Control:
       - no-cache, no-store, must-revalidate
       Pragma:
       - no-cache
       Set-Cookie:
-      - SC_DFP=KWAcBNSoCglaKX8LZIkAXupqrSxSARbl; expires=Wed, 15-Jan-2031 01:07:04
+      - SC_DFP=mOPEbIDiNB9CTU3Iy7e3htL6chYw4JVs; expires=Sun, 19-Jan-2031 12:06:45
         GMT; httponly; Max-Age=315360000; Path=/
       Req-Id:
-      - 5885985c71b3af7d1b6d0231992066be
+      - request_id
       Expires:
       - '0'
       X-Request-Id:
-      - 5885985c71b3af7d1b6d0231992066be
+      - request_id
     body:
       encoding: ASCII-8BIT
-      string: '{"errors": [], "orders": [{"estimated_shipping_fee": "25.42", "order_flag":
-        "fulfilled_by_local_seller", "payment_method": "Ebanx Credit Card Installment
-        2x installment plan", "dropshipper_phone": "", "message_to_seller": "", "shipping_carrier":
-        "Padr\u00e3o", "currency": "BRL", "create_time": 1610837293, "pay_time": 1610837344,
-        "days_to_ship": 3, "credit_card_number": "", "note": "", "is_split_up": false,
-        "ship_by_date": 1611182944, "escrow_tax": "0.00", "tracking_no": "", "order_status":
-        "READY_TO_SHIP", "note_update_time": 0, "fm_tn": "", "update_time": 1610837344,
-        "buyer_cpf_id": "123", "cancel_reason": "", "recipient_address": {"town":
-        "", "city": "Vit\u00f3ria da Conquista", "name": "Cliente",
-        "district": "", "country": "BR", "zipcode": "00000000", "full_address": "Full address",
-        "phone": "554111111111", "state": "Bahia"}, "cancel_by": "", "escrow_amount":
-        "31.90", "buyer_cancel_reason": "", "goods_to_declare": false, "lm_tn": "",
-        "total_amount": "31.90", "service_code": "", "country": "BR", "actual_shipping_cost":
-        "", "cod": false, "items": [{"weight": 0.5, "item_name": "Produto", "is_wholesale": false, "promotion_type":
-        "", "item_sku": "", "variation_discounted_price": "31.90", "variation_id":
-        0, "variation_name": "", "is_set_item": false, "is_add_on_deal": false, "item_id":
-        6854048982, "promotion_id": 0, "add_on_deal_id": 0, "variation_quantity_purchased":
-        1, "variation_sku": "", "variation_original_price": "31.90", "is_main_item":
-        false}], "ordersn": "123", "dropshipper": "", "is_actual_shipping_fee_confirmed":
-        false, "buyer_username": "username"}], "request_id": "5885985c71b3af7d1b6d0231992066be"}'
+      string: '{"errors": [], "orders": [{"estimated_shipping_fee": "14.33", "order_flag":
+        "fulfilled_by_local_seller", "payment_method": "Ebanx Boleto", "dropshipper_phone":
+        "", "message_to_seller": "", "shipping_carrier": "Padr\u00e3o", "currency":
+        "BRL", "create_time": 1611181630, "pay_time": 1611223547, "days_to_ship":
+        3, "credit_card_number": "", "note": "", "is_split_up": false, "ship_by_date":
+        1611655547, "escrow_tax": "0.00", "tracking_no": "", "order_status": "READY_TO_SHIP",
+        "note_update_time": 0, "fm_tn": "", "update_time": 1611223547, "buyer_cpf_id":
+        "CPF", "cancel_reason": "", "recipient_address": {"town": "", "city":
+        "City", "name": "Customer Name", "district":
+        "", "country": "BR", "zipcode": "00000000", "full_address": "Full Address", "phone": "55", "state":
+        "S\u00e3o Paulo"}, "cancel_by": "", "escrow_amount": "127.60", "buyer_cancel_reason":
+        "", "goods_to_declare": false, "lm_tn": "", "total_amount": "127.60", "service_code":
+        "", "country": "BR", "actual_shipping_cost": "", "cod": false, "items": [{"weight":
+        0.5, "item_name": "Item", "is_wholesale": false, "promotion_type": "",
+        "item_sku": "", "variation_discounted_price": "31.90", "variation_id": 0,
+        "variation_name": "", "is_set_item": false, "is_add_on_deal": false, "item_id":
+        1, "promotion_id": 0, "add_on_deal_id": 0, "variation_quantity_purchased":
+        2, "variation_sku": "", "variation_original_price": "31.90", "is_main_item":
+        false}, {"weight": 0.6, "item_name": "Item Name", "is_wholesale": false, "promotion_type": "", "item_sku":
+        "", "variation_discounted_price": "31.90", "variation_id": 0, "variation_name":
+        "", "is_set_item": false, "is_add_on_deal": false, "item_id": 1,
+        "promotion_id": 0, "add_on_deal_id": 0, "variation_quantity_purchased": 2,
+        "variation_sku": "", "variation_original_price": "31.90", "is_main_item":
+        false}], "ordersn": "1234", "dropshipper": "", "is_actual_shipping_fee_confirmed":
+        false, "buyer_username": "customer_user"}], "request_id": "request_id"}'
     http_version:
-  recorded_at: Sun, 17 Jan 2021 01:07:04 GMT
+  recorded_at: Thu, 21 Jan 2021 12:06:46 GMT
 recorded_with: VCR 5.1.0

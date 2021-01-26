@@ -1,8 +1,9 @@
-require "shopee/version"
-require "shopee/http"
-require_relative "api/auth1"
-require_relative "api/orders"
-require_relative "api/items"
+require 'shopee/version'
+require 'shopee/http'
+require_relative 'api/auth1'
+require_relative 'api/orders'
+require_relative 'api/items'
+require_relative 'api/logistics'
 
 module Shopee
   class Api
@@ -10,6 +11,7 @@ module Shopee
     include Auth1
     include Orders
     include Items
+    include Logistics
 
     def initialize(params)
       [:partner_id, :partner_key, :redirect_uri, :shopid].each do |field|
@@ -25,9 +27,9 @@ module Shopee
       @production = params[:production]
 
       if @production == false
-        @endpoint_url = "https://partner.uat.shopeemobile.com"
+        @endpoint_url = 'https://partner.uat.shopeemobile.com'
       else
-        @endpoint_url = "https://partner.shopeemobile.com"
+        @endpoint_url = 'https://partner.shopeemobile.com'
       end
     end
   end
