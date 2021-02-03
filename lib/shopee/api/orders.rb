@@ -8,9 +8,9 @@ module Orders
     { ok: response }
   end
 
-  def get_orders()
+  def get_orders(params={})
     path = '/api/v1/orders/get'
-    body = {'order_status': 'ALL'}
+    body = {'order_status': 'ALL'}.merge(params)
     request_result = post_request(path, body)
 
     response = JSON.parse(request_result.body)
