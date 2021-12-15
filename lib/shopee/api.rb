@@ -27,7 +27,7 @@ module Shopee
       @production = params[:production]
 
       if @production == false
-        @endpoint_url = 'https://partner.uat.shopeemobile.com'
+        @endpoint_url = 'https://partner.test-stable.shopeemobile.com'
       else
         @endpoint_url = 'https://partner.shopeemobile.com'
       end

@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "dotenv-rails"
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "webmock"
+  spec.add_runtime_dependency 'rexml'
   spec.add_development_dependency "vcr"
   spec.add_runtime_dependency "httparty", "~> 0.18.1"
 end
