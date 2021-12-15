@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://partner.uat.shopeemobile.com/api/v1/items/get
+    uri: https://partner.test-stable.shopeemobile.com/api/v1/items/get
     body:
       encoding: UTF-8
-      string: '{"pagination_offset":0,"pagination_entries_per_page":100,"shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1609377179}'
+      string: '{"pagination_offset":0,"pagination_entries_per_page":100,"shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1639530016}'
     headers:
       Content-Type:
       - application/json
       Authorization:
-      - 85e9d00c1285721509f4296c341a9629e409d1c700ec4d4a027d8a9719cdb16a
+      - 6d8e27e91876abe44e25b501a529d3188c6960f63d6fe1c21b090a7958fec58e
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - SGW
       Date:
-      - Thu, 31 Dec 2020 01:13:01 GMT
+      - Wed, 15 Dec 2021 01:00:23 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -33,9 +33,9 @@ http_interactions:
       Connection:
       - keep-alive
       X-Sgwreq-Id:
-      - 1910f89400124563ab310cabeceef404
+      - 82dfef7c879ada485cf3141cf3fb9b3a
       X-Request-Id:
-      - 1910f89400124563ab310cabeceef404
+      - 82dfef7c879ada485cf3141cf3fb9b3a
       Access-Control-Expose-Headers:
       - Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers,
         Content-Type
@@ -44,7 +44,7 @@ http_interactions:
       Host:
       - partner.shopeemobile.com
       Req-Id:
-      - 1910f89400124563ab310cabeceef404
+      - 82dfef7c879ada485cf3141cf3fb9b3a
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Origin:
@@ -53,7 +53,7 @@ http_interactions:
       - Content-Type,AccessToken,X-CSRF-Token, Authorization, Token
     body:
       encoding: UTF-8
-      string: '{"items":[],"request_id":"1910f89400124563ab310cabeceef404","more":false,"total":0}'
-    http_version: null
-  recorded_at: Thu, 31 Dec 2020 01:13:01 GMT
+      string: '{"items":[],"request_id":"82dfef7c879ada485cf3141cf3fb9b3a","more":false,"total":0}'
+    http_version:
+  recorded_at: Wed, 15 Dec 2021 01:00:23 GMT
 recorded_with: VCR 5.1.0

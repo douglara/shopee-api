@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://partner.uat.shopeemobile.com/api/v1/orders/detail
+    uri: https://partner.shopeemobile.com/api/v1/orders/detail
     body:
       encoding: UTF-8
-      string: '{"ordersn_list":["11111111111111"],"shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1610846124}'
+      string: '{"ordersn_list":["11111111111111"],"shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1639528752}'
     headers:
       Content-Type:
       - application/json
       Authorization:
-      - 1422d8ceab46ba0edaf2953eebab320ba3fa7f3c03b98946811a98f62608483d
+      - 3262ad9b40b62fb13199c84730a754f026a7b65cb5bdc4e1816625c4f77fce4c
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,36 +25,31 @@ http_interactions:
       Server:
       - SGW
       Date:
-      - Sun, 17 Jan 2021 01:15:24 GMT
+      - Wed, 15 Dec 2021 00:39:12 GMT
       Content-Type:
       - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '89'
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
-      - Accept-Encoding
-      - Accept-Encoding
-      - Accept-Encoding
       X-Sgwreq-Id:
-      - 86935a1b37d77b35dc876a5c13d1f316
-      Cache-Control:
-      - no-cache, no-store, must-revalidate
-      Pragma:
-      - no-cache
-      Set-Cookie:
-      - SC_DFP=PZuWdKMaZBrV5E1c7AumF5NjsIF6P1n9; expires=Wed, 15-Jan-2031 01:15:24
-        GMT; httponly; Max-Age=315360000; Path=/
-      Req-Id:
-      - 86935a1b37d77b35dc876a5c13d1f316
-      Expires:
-      - '0'
+      - 77d2d03366e1e06ec39ff00c8e42d689
+      Access-Control-Expose-Headers:
+      - Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers,
+        Content-Type
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
       X-Request-Id:
-      - 86935a1b37d77b35dc876a5c13d1f316
+      - 77d2d03366e1e06ec39ff00c8e42d689
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Content-Type,AccessToken,X-CSRF-Token, Authorization, Token
     body:
-      encoding: ASCII-8BIT
-      string: '{"errors": ["11111111111111"], "orders": [], "request_id": "86935a1b37d77b35dc876a5c13d1f316"}'
+      encoding: UTF-8
+      string: '{"request_id":"77d2d03366e1e06ec39ff00c8e42d689","orders":[],"errors":["11111111111111"]}'
     http_version:
-  recorded_at: Sun, 17 Jan 2021 01:15:24 GMT
+  recorded_at: Wed, 15 Dec 2021 00:39:12 GMT
 recorded_with: VCR 5.1.0

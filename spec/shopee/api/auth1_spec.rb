@@ -1,5 +1,5 @@
 RSpec.describe Auth1 do
-  let(:endpoint_url) { 'https://partner.uat.shopeemobile.com' }
+  let(:endpoint_url) { 'https://partner.test-stable.shopeemobile.com' }
   let(:partner_id) { ENV['PARTNER_ID'] }
   let(:partner_key) { ENV['PARTNER_KEY'] }
   let(:redirect_url) { ENV['REDIRECT_URI'] }
