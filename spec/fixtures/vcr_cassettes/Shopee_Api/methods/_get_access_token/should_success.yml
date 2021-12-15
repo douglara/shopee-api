@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://partner.test-stable.shopeemobile.com/api/v2/auth/token/get?partner_id=<PARTNER_ID>&shop_id=<SHOPID>&sign=4c6ae9a0ff3670aeb41fb17d942887333e186c098630a5b05332434bb616bd28&timestamp=1639531523
+    body:
+      encoding: UTF-8
+      string: '{"code":"<AUTH_CODE>","shop_id":<SHOPID>,"partner_id":<PARTNER_ID>,"shopid":<SHOPID>,"timestamp":1639531523}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - a361f6bf2a186dce49a44e184eae837a223b5b48485cca785c49fd30d49378e4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - SGW
+      Date:
+      - Wed, 15 Dec 2021 01:25:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Sgwreq-Id:
+      - 43d3db150ef6d14ea24426602b65afd8
+      Vary:
+      - Accept-Encoding
+      Req-Id:
+      - 43d3db150ef6d14ea24426602b65afd8
+      X-Request-Id:
+      - 43d3db150ef6d14ea24426602b65afd8
+      X-Frame-Options:
+      - SAMEORIGIN
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"<AUTH_ACCESS_TOKEN>","error":"","request_id":"43d3db150ef6d14ea24426602b65afd8","message":"","expire_in":14053,"refresh_token":"<AUTH_REFRESH_TOKEN>"}'
+    http_version:
+  recorded_at: Wed, 15 Dec 2021 01:25:25 GMT
+recorded_with: VCR 5.1.0

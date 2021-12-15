@@ -1,7 +1,7 @@
 require "openssl"
 
 module Auth2
-  def auth2_build_auth_url()
+  def build_auth_url()
     timest = Time.now.getutc.to_i
     path = "/api/v2/shop/auth_partner"
     base_string = "#{@partner_id}#{path}#{timest}"
@@ -10,13 +10,13 @@ module Auth2
     return{ :ok => url }
   end
 
-  def auth2_get_access_token(auth_code, shop_id)
+  def get_access_token(auth_code)
     timest = Time.now.getutc.to_i
-    body = { "code": auth_code, "shop_id": shop_id.to_i, "partner_id": @partner_id }
+    body = { "code": auth_code, "shop_id": @shopid.to_i, "partner_id": @partner_id }
     path = '/api/v2/auth/token/get'
-    base_string = "#{@partner_id}#{path}#{timest}#{shop_id}"
+    base_string = "#{@partner_id}#{path}#{timest}#{@shopid}"
     sign = OpenSSL::HMAC.hexdigest("SHA256", @partner_key, base_string)
-    path_url = "#{path}?partner_id=#{@partner_id}&shop_id=#{shop_id}&sign=#{sign}&timestamp=#{timest}"
+    path_url = "#{path}?partner_id=#{@partner_id}&shop_id=#{@shopid}&sign=#{sign}&timestamp=#{timest}"
 
     request_result = post_request(path_url, body)
     response = JSON.parse(request_result.body)
@@ -28,7 +28,7 @@ module Auth2
     end
   end
 
-  def auth2_refresh_token(refresh_token)
+  def refresh_token(refresh_token)
     timest = Time.now.getutc.to_i
     body = { "shop_id": @shopid, "refresh_token": refresh_token, "partner_id": @partner_id }
     path = "/api/v2/auth/access_token/get"

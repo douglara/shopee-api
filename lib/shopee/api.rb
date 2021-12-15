@@ -1,6 +1,7 @@
 require 'shopee/version'
 require 'shopee/http'
 require_relative 'api/auth1'
+require_relative 'api/auth2'
 require_relative 'api/orders'
 require_relative 'api/items'
 require_relative 'api/logistics'
@@ -8,7 +9,6 @@ require_relative 'api/logistics'
 module Shopee
   class Api
     include Shopee::Http
-    include Auth1
     include Orders
     include Items
     include Logistics
@@ -25,6 +25,12 @@ module Shopee
       @shopid = params[:shopid].to_i
       @access_token = params[:access_token]
       @production = params[:production]
+      if params[:api_version]
+        @api_version = params[:api_version]
+      else
+        @api_version = 'v2'
+      end
+      load_auth()
 
       if @production == false
         @endpoint_url = 'https://partner.test-stable.shopeemobile.com'
@@ -32,5 +38,15 @@ module Shopee
         @endpoint_url = 'https://partner.shopeemobile.com'
       end
     end
+
+    private
+
+      def load_auth
+        if @api_version == 'v2'
+          self.singleton_class.send(:include, Auth2)
+        else
+          self.singleton_class.send(:include, Auth1)
+        end
+      end
   end
 end

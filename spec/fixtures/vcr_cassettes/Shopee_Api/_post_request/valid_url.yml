@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://partner.test-stable.shopeemobile.com/api/v2/shop/update_profile?access_token=<AUTH_ACCESS_TOKEN>&partner_id=<PARTNER_ID>&shop_id=<SHOPID>&sign=22ab65613b7fdcc19b522235bc7230b890dbd9d214bd2676e99ad9ad1432a3c2&timestamp=1639533105
+    body:
+      encoding: UTF-8
+      string: '{"shop_name":"Test Shop"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - SGW
+      Date:
+      - Wed, 15 Dec 2021 01:51:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Sgwreq-Id:
+      - 1abaea53532e45c92bb248a9b3e7003e
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      X-Request-Id:
+      - 1abaea53532e45c92bb248a9b3e7003e
+      Expires:
+      - '0'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"","request_id":"1abaea53532e45c92bb248a9b3e7003e","response":{},"error":""}'
+    http_version:
+  recorded_at: Wed, 15 Dec 2021 01:51:47 GMT
+recorded_with: VCR 5.1.0
