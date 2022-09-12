@@ -10,6 +10,23 @@ module Auth2
     return{ :ok => url }
   end
 
+  def get_auth_params(path)
+    timest = Time.now.getutc.to_i
+
+    {
+      'partner_id': "#{@partner_id}",
+      'access_token': "#{@access_token}",
+      'shop_id': @shopid,
+      'sign': get_logged_sign(path, timest), 
+      'timestamp': timest 
+    }
+  end
+
+  def get_logged_sign(path, timest = Time.now.getutc.to_i)
+    base_string = "#{@partner_id}#{path}#{timest}#{@access_token}#{@shopid}"
+    OpenSSL::HMAC.hexdigest("SHA256", @partner_key, base_string)
+  end
+
   def get_access_token(auth_code)
     timest = Time.now.getutc.to_i
     body = { "code": auth_code, "shop_id": @shopid.to_i, "partner_id": @partner_id }
@@ -18,7 +35,7 @@ module Auth2
     sign = OpenSSL::HMAC.hexdigest("SHA256", @partner_key, base_string)
     path_url = "#{path}?partner_id=#{@partner_id}&shop_id=#{@shopid}&sign=#{sign}&timestamp=#{timest}"
 
-    request_result = post_request(path_url, body)
+    request_result = public_post_request(path_url, body)
     response = JSON.parse(request_result.body)
 
     if (response.key?("access_token"))
@@ -36,7 +53,7 @@ module Auth2
     sign = OpenSSL::HMAC.hexdigest("SHA256", @partner_key, base_string)
     path_url = "#{path}?partner_id=#{@partner_id}&shop_id=#{@shopid}&sign=#{sign}&timestamp=#{timest}"
 
-    request_result = post_request(path_url, body)
+    request_result = public_post_request(path_url, body)
     response = JSON.parse(request_result.body)
 
     if (response.key?("access_token"))

@@ -5,7 +5,8 @@ RSpec.describe Shopee::Api do
       partner_key: ENV['PARTNER_KEY'],
       redirect_uri: ENV['REDIRECT_URI'],
       shopid: ENV['SHOPID'],
-      production: true
+      production: true,
+      api_version: 'v1'
     })
   }
 

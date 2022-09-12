@@ -11,12 +11,18 @@ RSpec.describe Shopee::Api do
   describe 'methods' do
     describe '#build_auth_url' do
       it 'valid url' do
-        expect(subject.build_auth_url()).to include(:ok)
+        url = subject.build_auth_url()
+        expect(url).to include(:ok)
       end
     end
     describe '#get_access_token', :vcr do
       it 'should success' do
         expect(subject.get_access_token(ENV["AUTH_CODE"])).to include(:ok)
+      end
+    end
+    describe '#refresh_token', :vcr do
+      it 'should success' do
+        expect(subject.refresh_token(ENV["AUTH_REFRESH_TOKEN"])).to include(:ok)
       end
     end
   end
