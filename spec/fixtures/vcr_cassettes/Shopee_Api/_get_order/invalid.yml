@@ -5,12 +5,12 @@ http_interactions:
     uri: https://partner.shopeemobile.com/api/v1/orders/detail
     body:
       encoding: UTF-8
-      string: '{"ordersn_list":["11111111111111"],"shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1639528752}'
+      string: '{"ordersn_list":["11111111111111"],"shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1663158795}'
     headers:
       Content-Type:
       - application/json
       Authorization:
-      - 3262ad9b40b62fb13199c84730a754f026a7b65cb5bdc4e1816625c4f77fce4c
+      - 93b14261ec367ec579b747144e1083f3bcf89b507d4e88c02dc891aa9c123ea7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,31 +25,33 @@ http_interactions:
       Server:
       - SGW
       Date:
-      - Wed, 15 Dec 2021 00:39:12 GMT
+      - Wed, 14 Sep 2022 12:33:16 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
       - '89'
-      Connection:
-      - keep-alive
       X-Sgwreq-Id:
-      - 77d2d03366e1e06ec39ff00c8e42d689
+      - c4f86e20fed2467786f1fcee44e0b5e1
       Access-Control-Expose-Headers:
       - Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers,
         Content-Type
       Access-Control-Allow-Methods:
       - POST, GET, OPTIONS
       X-Request-Id:
-      - 77d2d03366e1e06ec39ff00c8e42d689
+      - c4f86e20fed2467786f1fcee44e0b5e1
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
       - Content-Type,AccessToken,X-CSRF-Token, Authorization, Token
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: '{"request_id":"77d2d03366e1e06ec39ff00c8e42d689","orders":[],"errors":["11111111111111"]}'
+      string: '{"request_id":"c4f86e20fed2467786f1fcee44e0b5e1","orders":[],"errors":["11111111111111"]}'
     http_version:
-  recorded_at: Wed, 15 Dec 2021 00:39:12 GMT
+  recorded_at: Wed, 14 Sep 2022 12:33:16 GMT
 recorded_with: VCR 5.1.0

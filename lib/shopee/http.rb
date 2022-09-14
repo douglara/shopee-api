@@ -48,7 +48,7 @@ module Shopee
       if @api_version == 'v2'
         { 'Content-Type': 'application/json' }
       else
-        { 'Content-Type': 'application/json', 'Authorization': Auth1.generate_authorization(path, body_to_send, @endpoint_url, @partner_key)[:ok] }
+        { 'Content-Type': 'application/json', 'Authorization': Auth1.generate_authorization(path, body_to_send.to_json, @endpoint_url, @partner_key)[:ok] }
       end
     end
   end
