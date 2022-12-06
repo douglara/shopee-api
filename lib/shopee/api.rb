@@ -14,7 +14,7 @@ module Shopee
     include Logistics
 
     def initialize(params)
-      [:partner_id, :partner_key, :redirect_uri, :shopid].each do |field|
+      [:partner_id, :partner_key, :redirect_uri].each do |field|
         raise ArgumentError if (params[field.to_sym] == nil or params[field.to_sym].empty?)
       end
 

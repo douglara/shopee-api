@@ -1,9 +1,9 @@
 module Orders
-  def get_order(order_id)
+  def get_order(order_id, params = {})
     if @api_version == 'v1'
-      return v1_get_order(order_id)
+      return v1_get_order(order_id, params)
     else
-      return v2_get_order(order_id)
+      return v2_get_order(order_id, params)
     end
   end
 
@@ -29,9 +29,9 @@ module Orders
     { ok: response }
   end
 
-  def v1_get_order(order_id)
+  def v1_get_order(order_id, params = {})
     path = '/api/v1/orders/detail'
-    body = {'ordersn_list': [order_id.to_s]}
+    body = {'ordersn_list': [order_id.to_s]}.merge(params)
     request_result = post_request(path, body)
 
     response = JSON.parse(request_result.body)
