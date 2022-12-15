@@ -1,16 +1,14 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://partner.shopeemobile.com/api/v1/orders/detail
+    method: get
+    uri: https://partner.test-stable.shopeemobile.com/api/v2/order/get_order_list?access_token=<AUTH_ACCESS_TOKEN>&page_size=100&partner_id=<PARTNER_ID>&shop_id=<SHOPID>&sign=8732403f0064dc5229c437415a749cfe6ac5d5c43dbe72c7dd18efa11cdbfdbe&time_from=1662841396&time_range_field=create_time&time_to=1662841410&timestamp=1662841410
     body:
-      encoding: UTF-8
-      string: '{"ordersn_list":["11111111111111"],"shopid":<SHOPID>,"partner_id":<PARTNER_ID>,"timestamp":1663158795}'
+      encoding: US-ASCII
+      string: ''
     headers:
       Content-Type:
       - application/json
-      Authorization:
-      - 93b14261ec367ec579b747144e1083f3bcf89b507d4e88c02dc891aa9c123ea7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,33 +23,33 @@ http_interactions:
       Server:
       - SGW
       Date:
-      - Wed, 14 Sep 2022 12:33:16 GMT
+      - Sat, 10 Sep 2022 20:23:31 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '89'
+      - '132'
+      Connection:
+      - keep-alive
       X-Sgwreq-Id:
-      - c4f86e20fed2467786f1fcee44e0b5e1
+      - 37f26db2171fdd65b1443eb20ff92d0a
+      X-Gw-Api:
+      - '28330'
       Access-Control-Expose-Headers:
       - Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers,
         Content-Type
       Access-Control-Allow-Methods:
       - POST, GET, OPTIONS
       X-Request-Id:
-      - c4f86e20fed2467786f1fcee44e0b5e1
+      - 37f26db2171fdd65b1443eb20ff92d0a
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
       - Content-Type,AccessToken,X-CSRF-Token, Authorization, Token
-      Via:
-      - 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: '{"request_id":"c4f86e20fed2467786f1fcee44e0b5e1","orders":[],"errors":["11111111111111"]}'
+      string: '{"error":"","message":"","response":{"more":false,"next_cursor":"","order_list":[]},"request_id":"37f26db2171fdd65b1443eb20ff92d0a"}'
     http_version:
-  recorded_at: Wed, 14 Sep 2022 12:33:16 GMT
+  recorded_at: Sat, 10 Sep 2022 20:23:31 GMT
 recorded_with: VCR 5.1.0

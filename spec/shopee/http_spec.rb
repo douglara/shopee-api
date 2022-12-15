@@ -5,12 +5,13 @@ RSpec.describe Shopee::Api do
       partner_key: ENV["PARTNER_KEY"],
       redirect_uri: ENV["REDIRECT_URI"],
       shopid: ENV["SHOPID"],
+      access_token: ENV["AUTH_ACCESS_TOKEN"]
     })
   }
 
-  describe "#post_request" do
+  describe "#post_request", :vcr do
     it "valid url" do
-      expect(subject.post_request("/api/v2/auth/access_token/get").code).to eq(200)
+      expect(subject.post_request("/api/v2/shop/update_profile", {'shop_name': 'Test Shop'}).code).to eq(200)
     end
 
     it "timeout request" do
